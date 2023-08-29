@@ -19,4 +19,17 @@ module MLRuby
     end
   end
 
+  module DecisionTreeClassifier
+    class Model
+      def initialize(data)
+        @data = data
+      end
+      def predict(next_x)
+        script_path = "#{Gem.loaded_specs['ML_Ruby'].gem_dir}/lib/python/decision_tree_classifier.py"
+        result = `#{MLRuby::PYTHON_PATH} #{script_path} "#{@data}, #{next_x}"`
+        result
+      end
+    end
+  end
+
 end
