@@ -1,6 +1,6 @@
 # MLRuby
 
-Machine Learning based Ruby gem used for forcasting or predicting anything(for example: next month billing forcast, upcoming sales order etc). Linear Regression algorithm is used powered by Python3 under the hood.
+Machine Learning based Ruby gem used for forcasting or predicting or classifying anything(for example: next month billing forcast, upcoming sales order, approval status etc). Linear Regression and DecisionTreeClassifier algorithms are used powered by Python3 under the hood.
 
 ## Installation
 
