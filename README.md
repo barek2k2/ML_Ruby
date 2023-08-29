@@ -1,31 +1,23 @@
 # MLRuby
 
-TODO: Delete this and the text below, and describe your gem
-
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/ML_Ruby`. To experiment with that code, run `bin/console` for an interactive prompt.
+Machine Learning based Ruby gem used for forcasting or predicting anything(for example: next month billing forcast, upcoming sales order etc). Linear Regression algorithm is used powered by Python3 under the hood.
 
 ## Installation
 
-TODO: Replace `UPDATE_WITH_YOUR_GEM_NAME_PRIOR_TO_RELEASE_TO_RUBYGEMS_ORG` with your gem name right after releasing it to RubyGems.org. Please do not do it earlier due to security reasons. Alternatively, replace this section with instructions to install your gem from git if you don't plan to release to RubyGems.org.
+Make sure you have Python3 installed at `/usr/bin/python3` in your Machine.
 
-Install the gem and add to the application's Gemfile by executing:
-
-    $ bundle add UPDATE_WITH_YOUR_GEM_NAME_PRIOR_TO_RELEASE_TO_RUBYGEMS_ORG
-
-If bundler is not being used to manage dependencies, install the gem by executing:
-
-    $ gem install UPDATE_WITH_YOUR_GEM_NAME_PRIOR_TO_RELEASE_TO_RUBYGEMS_ORG
+    $ gem install ML_Ruby
 
 ## Usage
+Lets say you have 3 days sales order data those represents as 1,2,3 like this `[[1],[2],[3]]` as input feature and 
+you have amount of corresponding sales order like this `[[100], [400], [430]]` as target variables. Now you would like to predict your sales order on day 4
 
-TODO: Write usage instructions here
-
-## Development
-
-After checking out the repo, run `bin/setup` to install dependencies. Then, run `rake spec` to run the tests. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
-
-To install this gem onto your local machine, run `bundle exec rake install`. To release a new version, update the version number in `version.rb`, and then run `bundle exec rake release`, which will create a git tag for the version, push git commits and the created tag, and push the `.gem` file to [rubygems.org](https://rubygems.org).
+```
+ ml = MLRuby::LinearRegression::Model.new([[1],[2],[3]], [[100], [400], [430]])
+ prediction = ml.predict([[4]]).to_f
+ puts prediction
+```
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/ML_Ruby.
+Bug reports and pull requests are welcome on GitHub at https://github.com/barek2k2/ML_Ruby/.
