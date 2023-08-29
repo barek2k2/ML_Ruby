@@ -6,8 +6,10 @@ RSpec.describe MLRuby do
   end
 
   it "should generate ML based prediction correctly!" do
-    ml = MLRuby::LinearRegression::Model.new([[1],[2],[3],[4], [5], [6]], [[400], [678], [700], [760], [790], [825]])
-    prediction = ml.predict([[7]])
+    ml = MLRuby::LinearRegression::Model.new([[1],[2],[3]], [[100], [400], [430]])
+    prediction = ml.predict([[4]]).to_f
+    puts prediction
     expect(prediction).not_to be nil
+    expect(prediction).to be > 0
   end
 end
