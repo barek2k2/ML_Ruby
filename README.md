@@ -1,10 +1,19 @@
 # MLRuby
 
-Machine Learning based Ruby gem used for forcasting or predicting or classifying anything(for example: next month billing forcast, upcoming sales order, approval status etc). Linear Regression and DecisionTreeClassifier algorithms are used powered by Python3 under the hood.
+Machine Learning based Ruby gem used for forcasting or predicting or classifying anything(for example: next month billing forcast, upcoming sales order, user approval status etc). Linear Regression and DecisionTreeClassifier algorithms are used powered by Python3 under the hood.
+
+## Pre-requisite
+1. Please make sure you have Python3 installed in your Machine. The gem will run `which python3` to locate your installed python3 in your Machine. Usually it is installed at `/usr/bin/python3`
+
+2. Please make sure you have `scikit-learn` and `pandas` python libraries are installed in Machine.
+
+Here is an example of how to install these python libraries via the command line in MacOS.
+
+`/usr/bin/python3 -m pip install scikit-learn`
+
+`/usr/bin/python3 -m pip install pandas`
 
 ## Installation
-
-Make sure you have Python3 installed at `/usr/bin/python3` in your Machine.
 
     $ gem install ML_Ruby
 

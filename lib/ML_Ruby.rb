@@ -3,7 +3,7 @@
 require_relative "ML_Ruby/version"
 
 module MLRuby
-  PYTHON_PATH = '/usr/bin/python3'
+  PYTHON_PATH = `which python3`.gsub("\n","")
   class Error < StandardError; end
   module LinearRegression
     class Model
