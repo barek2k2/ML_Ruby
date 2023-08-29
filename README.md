@@ -18,7 +18,7 @@ you have amount of corresponding sales order like this `[[100], [400], [430]]` a
  puts prediction
 ```
 
-Lets say you have some data like social credit score, yearly income and approval status. Now you would like to classify new person's status using DecisionTreeClassifier Algorithm
+Lets say you have some data like social credit score, yearly income and approval status(1 is approved and 0 is not approved). Now you would like to classify new person's approval status using DecisionTreeClassifier Algorithm
 ```
 data =  [[720, 60000, 1],
         [650, 40000, 0],
@@ -28,8 +28,8 @@ data =  [[720, 60000, 1],
         [750, 70000, 1]]
 
 ml = MLRuby::DecisionTreeClassifier::Model.new(data)
-    prediction1 = ml.predict([[180, 10000]]).to_i
-    prediction2 = ml.predict([[5000, 50000]]).to_i
+prediction1 = ml.predict([[180, 10000]]).to_i
+prediction2 = ml.predict([[5000, 50000]]).to_i
 ```
 
 
