@@ -8,16 +8,16 @@ Gem::Specification.new do |spec|
   spec.authors = ["Abdul Barek"]
   spec.email = ["barek2k2@gmail.com"]
 
-  spec.summary = "Machine learning gem for ruby application powered by Python"
+  spec.summary = "Machine learning based gem for ruby application powered by Python"
   spec.description = "Machine learning gem for ruby application powered by Python"
-  spec.homepage = "https://github.com/barek2k2"
+  spec.homepage = "https://github.com/barek2k2/ML_Ruby"
   spec.required_ruby_version = ">= 2.6.0"
 
   spec.metadata["allowed_push_host"] = "https://github.com/barek2k2"
 
-  spec.metadata["homepage_uri"] = "https://github.com/barek2k2"
-  spec.metadata["source_code_uri"] = "https://github.com/barek2k2"
-  spec.metadata["changelog_uri"] = "https://github.com/barek2k2"
+  spec.metadata["homepage_uri"] = "https://github.com/barek2k2/ML_Ruby"
+  spec.metadata["source_code_uri"] = "https://github.com/barek2k2/ML_Ruby"
+  spec.metadata["changelog_uri"] = "https://github.com/barek2k2/ML_Ruby"
 
   # Specify which files should be added to the gem when it is released.
   # The `git ls-files -z` loads the files in the RubyGem that have been added into git.
