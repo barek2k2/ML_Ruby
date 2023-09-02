@@ -86,10 +86,10 @@ Lets assume some of products in an ecommerce system having data like
       }
     ]
 ```
-Now you would like to get similar products(id is 4) with respect to product's features. You can do so like this way
+Now you would like to get similar products(of id 4) with respect to product's features. You can do so like this way
 ```
 feature_names = ["price", "screen_size", "camera_quality", "battery_capacity"]
-ml = MLRuby::KNearestNeighbors::Model.new(products, feature_names, 2)
+ml = MLRuby::KNearestNeighbors::Model.new(products, feature_names, 2) # 2 is the maximum number of nearest similar/recommended items
 similar_products = ml.similar_with(4)
 ```
 
