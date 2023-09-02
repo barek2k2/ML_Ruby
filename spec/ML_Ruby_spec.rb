@@ -26,4 +26,54 @@ RSpec.describe MLRuby do
     expect(prediction2).to be 1
   end
 
+  it "should implements k-nearest neighbors" do
+    products = [
+      {
+        "id": 1,
+        "name": "iPhone 12",
+        "price": 799,
+        "screen_size": 6.1,
+        "camera_quality": 12,
+        "battery_capacity": 2815
+      },
+      {
+        "id": 2,
+        "name": "Samsung Galaxy S21",
+        "price": 799,
+        "screen_size": 6.2,
+        "camera_quality": 12,
+        "battery_capacity": 4000
+      },
+      {
+        "id": 3,
+        "name": "Google Pixel 6",
+        "price": 699,
+        "screen_size": 6.0,
+        "camera_quality": 16,
+        "battery_capacity": 3700
+      },
+      {
+        "id": 4,
+        "name": "OnePlus 9 Pro",
+        "price": 799,
+        "screen_size": 6.7,
+        "camera_quality": 16,
+        "battery_capacity": 4500
+      },
+      {
+        "id": 5,
+        "name": "Xiaomi Mi 11",
+        "price": 699,
+        "screen_size": 6.81,
+        "camera_quality": 12,
+        "battery_capacity": 4600
+      }
+    ]
+    feature_names = ["price", "screen_size", "camera_quality", "battery_capacity"]
+    ml = MLRuby::KNearestNeighbors::Model.new(products, feature_names, 2)
+    similar_products = ml.similar_with(4)
+    expect(similar_products).to be_a(Array)
+    expect(similar_products.length > 0).to be true
+  end
+
 end
