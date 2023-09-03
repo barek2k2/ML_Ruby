@@ -21,7 +21,7 @@ Here are examples of how to install these python libraries via the command line 
     $ gem install ML_Ruby
 
 # Usage
- - ####Linear Regression Algorithm - Sales Order Prediction Example
+ - ###Linear Regression Algorithm - Sales Order Prediction Example
  
     Imagine you have three days' worth of sales order data represented as input features [1, 2, 3] and the corresponding sales amounts [100, 400, 430] as target variables. Now, you want to predict your sales order for day 4.
 ```
@@ -30,7 +30,7 @@ Here are examples of how to install these python libraries via the command line 
  puts prediction
 ```
 
- - ####Decision Tree Algorithm - User Approval Status  Example
+ - ###Decision Tree Algorithm - User Approval Status  Example
 
    Suppose you have a dataset that includes features such as social credit score, yearly income, and approval status (where 1 represents approval, and 0 represents non-approval). Now, you want to classify the approval status of a new person.
 
@@ -46,7 +46,7 @@ ml = MLRuby::DecisionTreeClassifier::Model.new(data)
 prediction1 = ml.predict([[180, 10000]]).to_i
 prediction2 = ml.predict([[5000, 50000]]).to_i
 ```
- - ####K-Nearest Neighbors Algorithm - Example on Recommended/Similar products in E-Commerce based application
+ - ###K-Nearest Neighbors Algorithm - Example on Recommended/Similar products in E-Commerce based application
 
    Imagine you have a dataset representing various products in an e-commerce platform, each characterized by specific features. Now, you want to find similar products to a given product (let's say, product ID 4) based on these features.
 
@@ -106,7 +106,7 @@ ml = MLRuby::KNearestNeighbors::Model.new(products, feature_names, 2)
 similar_products = ml.similar_with(4)
 ```
 
- - ####NLP: Naive Bayes Algorithm - Spam Detection in a Messaging System
+ - ###NLP: Naive Bayes Algorithm - Spam Detection in a Messaging System
 
     In a messaging system, it's essential to identify and filter out spam text messages to ensure a smooth and secure user experience. With the capabilities of this gem, you can effectively detect spam text and take appropriate actions.
 ```
