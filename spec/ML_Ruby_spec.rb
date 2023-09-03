@@ -5,14 +5,14 @@ RSpec.describe MLRuby do
     expect(MLRuby::VERSION).not_to be nil
   end
 
-  it "should generate ML based prediction/forcast correctly!" do
+  it "should generate ML based prediction/forecasting correctly!" do
     ml = MLRuby::LinearRegression::Model.new([[1],[2],[3]], [[100], [400], [430]])
-    prediction = ml.predict([[4]]).to_f
+    prediction = ml.predict([[4]])
     expect(prediction).not_to be nil
     expect(prediction).to be > 0
   end
 
-  it "should generate ML based classifier which can classify or categorize new item" do
+  it "should generate a classifier based on some attributes which can classify or categorize new item" do
     data = [[720, 60000, 1],
             [650, 40000, 0],
             [780, 80000, 1],
@@ -20,13 +20,13 @@ RSpec.describe MLRuby do
             [700, 55000, 1],
             [750, 70000, 1]]
     ml = MLRuby::DecisionTreeClassifier::Model.new(data)
-    prediction1 = ml.predict([[180, 10000]]).to_i
-    prediction2 = ml.predict([[5000, 50000]]).to_i
+    prediction1 = ml.predict([[180, 10000]])
+    prediction2 = ml.predict([[5000, 50000]])
     expect(prediction1).to be 0
     expect(prediction2).to be 1
   end
 
-  it "should implements k-nearest neighbors" do
+  it "should return similar/recommended items" do
     products = [
       {
         "id": 1,
@@ -76,7 +76,7 @@ RSpec.describe MLRuby do
     expect(similar_products.length > 0).to be true
   end
 
-  it "should detects spam message" do
+  it "should detect spam message in a messaging system" do
     training_messages = [
       ["Hey, congratulations! You have won a free iPhone.", "spam"],
       ["Meeting canceled, see you later.", "not_spam"],

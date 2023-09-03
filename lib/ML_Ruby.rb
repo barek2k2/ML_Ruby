@@ -5,7 +5,6 @@ require 'json'
 
 module MLRuby
   PYTHON_PATH = `which python3`.gsub("\n","")
-  class Error < StandardError; end
   module LinearRegression
     class Model
       def initialize(x, y)
@@ -15,7 +14,7 @@ module MLRuby
       def predict(next_x)
         script_path = "#{Gem.loaded_specs['ML_Ruby'].gem_dir}/lib/python/linear_regression.py"
         result = `#{MLRuby::PYTHON_PATH} #{script_path} "#{@x}, #{@y}, #{next_x}"`
-        result
+        result.to_f
       end
     end
   end
@@ -28,7 +27,7 @@ module MLRuby
       def predict(next_x)
         script_path = "#{Gem.loaded_specs['ML_Ruby'].gem_dir}/lib/python/decision_tree_classifier.py"
         result = `#{MLRuby::PYTHON_PATH} #{script_path} "#{@data}, #{next_x}"`
-        result
+        result.to_i
       end
     end
   end
