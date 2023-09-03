@@ -76,4 +76,29 @@ RSpec.describe MLRuby do
     expect(similar_products.length > 0).to be true
   end
 
+  it "should detects spam message" do
+    messages = [
+      ["Hey, congratulations! You have won a free iPhone.", "spam"],
+      ["Meeting canceled, see you later.", "not_spam"],
+      ["Buy one get one free. Limited time offer!", "spam"],
+      ["Can you please send me the report?", "not_spam"],
+      ["Meeting at 3 PM today.", "not_spam"],
+      ["Claim your prize now. You have won $1000!", "spam"],
+      ["Please reschedule the meeting on the next following day", "not_spam"],
+    ]
+    ml = MLRuby::NaturalLanguageProcessing::TextClassifier::Model.new(messages)
+    new_messages = [
+      "Welcome!, you have won 2.5 million dollars",
+      "Hello, can we schedule a meeting?",
+      "Important report attached.",
+      "Have your 50% discount on the next deal!",
+    ]
+    predictions = ml.predict(new_messages)
+    expect(predictions).to be_a(Array)
+    expect(predictions[0][1]).to eq('spam')
+    expect(predictions[1][1]).to eq('not_spam')
+    expect(predictions[2][1]).to eq('not_spam')
+    expect(predictions[3][1]).to eq('spam')
+  end
+
 end

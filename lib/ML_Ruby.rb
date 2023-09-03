@@ -48,4 +48,19 @@ module MLRuby
     end
   end
 
+  module NaturalLanguageProcessing
+    module TextClassifier
+      class Model
+        def initialize(training_data)
+          @training_data = training_data
+        end
+        def predict(new_data)
+          script_path = "#{Gem.loaded_specs['ML_Ruby'].gem_dir}/lib/python/natural_language_processing/text_classifier.py"
+          result = `#{MLRuby::PYTHON_PATH} #{script_path} '#{@training_data}' '#{new_data}'`
+          JSON.parse(result.gsub("'", "\""))
+        end
+      end
+    end
+  end
+
 end

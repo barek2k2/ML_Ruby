@@ -1,33 +1,39 @@
 # MLRuby
 
-Machine Learning based Ruby gem used for forcasting or predicting or classifying anything(for example: next month billing forcast, upcoming sales order, user approval status, generate similarities/recommendations etc). Linear Regression, DecisionTreeClassifier and k-nearest neighbors algorithms are used powered by Python3 under the hood.
+This Ruby gem leverages Machine Learning(ML) techniques to make predictions(forecasts) and classifications in various applications. It provides capabilities such as predicting next month's billing, forecasting upcoming sales orders, determining user approval status, classifying text, generating similarity scores, and making recommendations. It uses Python3 under the hood, powered by popular machine learning techniques including NLP(Natural Language Processing), Decision Tree, K-Nearest Neighbors and Linear Regression algorithms.
 
-## Pre-requisite
+
+# Pre-requisite
 1. Please make sure you have Python3 installed in your Machine. The gem will run `which python3` to locate your installed python3 in your Machine. Usually it is installed at `/usr/bin/python3`
 
 2. Please make sure you have `scikit-learn` and `pandas` python libraries are installed in Machine.
 
-Here is an example of how to install these python libraries via the command line in MacOS.
+Here are examples of how to install these python libraries via the command line in MacOS. Install `nltk` if you really need to work with Natural Language Processing(NLP)
 
 `/usr/bin/python3 -m pip install scikit-learn`
 
 `/usr/bin/python3 -m pip install pandas`
 
-## Installation
+`/usr/bin/python3 -m pip install nltk`
+
+# Installation
 
     $ gem install ML_Ruby
 
-## Usage
-Lets say you have 3 days sales order data those represents as 1,2,3 like this `[[1],[2],[3]]` as input feature and 
-you have amount of corresponding sales order like this `[[100], [400], [430]]` as target variables. Now you would like to predict your sales order on day 4
-
+# Usage
+ - ####Linear Regression Algorithm - Sales Order Prediction Example
+ 
+    Imagine you have three days' worth of sales order data represented as input features [1, 2, 3] and the corresponding sales amounts [100, 400, 430] as target variables. Now, you want to predict your sales order for day 4.
 ```
  ml = MLRuby::LinearRegression::Model.new([[1],[2],[3]], [[100], [400], [430]])
  prediction = ml.predict([[4]]).to_f
  puts prediction
 ```
 
-Lets say you have some data like social credit score, yearly income and approval status(1 is approved and 0 is not approved). Now you would like to classify new person's approval status using DecisionTreeClassifier Algorithm
+ - ####Decision Tree Algorithm - User Approval Status  Example
+
+   Suppose you have a dataset that includes features such as social credit score, yearly income, and approval status (where 1 represents approval, and 0 represents non-approval). Now, you want to classify the approval status of a new person.
+
 ```
 data =  [[720, 60000, 1],
         [650, 40000, 0],
@@ -40,8 +46,10 @@ ml = MLRuby::DecisionTreeClassifier::Model.new(data)
 prediction1 = ml.predict([[180, 10000]]).to_i
 prediction2 = ml.predict([[5000, 50000]]).to_i
 ```
+ - ####K-Nearest Neighbors Algorithm - Example on Recommended/Similar products in E-Commerce based application
 
-Lets assume some of products in an ecommerce system having data like
+   Imagine you have a dataset representing various products in an e-commerce platform, each characterized by specific features. Now, you want to find similar products to a given product (let's say, product ID 4) based on these features.
+
 ```
     products = [
       {
@@ -86,7 +94,6 @@ Lets assume some of products in an ecommerce system having data like
       }
     ]
 ```
-Now you would like to get similar products(of id 4) with respect to product's features. You can do so like this way
 ```
 feature_names = ["price", "screen_size", "camera_quality", "battery_capacity"]
 ml = MLRuby::KNearestNeighbors::Model.new(products, feature_names, 2) # 2 is the maximum number of nearest similar/recommended items
@@ -99,6 +106,29 @@ ml = MLRuby::KNearestNeighbors::Model.new(products, feature_names, 2)
 similar_products = ml.similar_with(4)
 ```
 
+ - ####NLP: Naive Bayes Algorithm - Spam Detection in a Messaging System
+
+    In a messaging system, it's essential to identify and filter out spam text messages to ensure a smooth and secure user experience. With the capabilities of this gem, you can effectively detect spam text and take appropriate actions.
+```
+messages = [
+      ["Hey, congratulations! You have won a free iPhone.", "spam"],
+      ["Meeting canceled, see you later.", "not_spam"],
+      ["Buy one get one free. Limited time offer!", "spam"],
+      ["Can you please send me the report?", "not_spam"],
+      ["Meeting at 3 PM today.", "not_spam"],
+      ["Claim your prize now. You have won $1000!", "spam"],
+      ["Please reschedule the meeting on the next following day", "not_spam"],
+    ]
+
+  ml = MLRuby::NaturalLanguageProcessing::TextClassifier::Model.new(messages)
+  new_messages = [
+      "Welcome!, you have won 2.5 million dollars",
+      "Hello, can we schedule a meeting?",
+      "Important report attached.",
+      "Have your 50% discount on the next deal!",
+    ]
+  predictions = ml.predict(new_messages)
+```
 
 
 ## Contributing
