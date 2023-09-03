@@ -77,7 +77,7 @@ RSpec.describe MLRuby do
   end
 
   it "should detects spam message" do
-    messages = [
+    training_messages = [
       ["Hey, congratulations! You have won a free iPhone.", "spam"],
       ["Meeting canceled, see you later.", "not_spam"],
       ["Buy one get one free. Limited time offer!", "spam"],
@@ -86,7 +86,7 @@ RSpec.describe MLRuby do
       ["Claim your prize now. You have won $1000!", "spam"],
       ["Please reschedule the meeting on the next following day", "not_spam"],
     ]
-    ml = MLRuby::NaturalLanguageProcessing::TextClassifier::Model.new(messages)
+    ml = MLRuby::NaturalLanguageProcessing::TextClassifier::Model.new(training_messages)
     new_messages = [
       "Welcome!, you have won 2.5 million dollars",
       "Hello, can we schedule a meeting?",
