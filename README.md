@@ -129,7 +129,7 @@ messages = [
     ]
   predictions = ml.predict(new_messages)
 ```
-It's important to note that the size of your training dataset plays a significant role in enhancing the accuracy of the model's predictions. As you increase the volume of training data available to the model, it gains a better understanding of patterns and trends within the data which leads to more precise and reliable predictions.
+It's important to note that the size of your training dataset plays a significant role in enhancing the accuracy of the model's predictions. By incorporating real-world, authentic data and expanding the amount of training data for the model, it gains a better understanding of patterns and trends within the data which leads to more precise and reliable predictions.
 ## Contributing
 
 Bug reports and pull requests are welcome on GitHub at https://github.com/barek2k2/ML_Ruby/.
