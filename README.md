@@ -26,7 +26,7 @@ Here are examples of how to install these python libraries via the command line 
     Imagine you have three days' worth of sales order data represented as input features [1, 2, 3] and the corresponding sales amounts [100, 400, 430] as target variables. Now, you want to predict your sales order for day 4.
 ```
  ml = MLRuby::LinearRegression::Model.new([[1],[2],[3]], [[100], [400], [430]])
- prediction = ml.predict([[4]]).to_f
+ prediction = ml.predict([[4]])
  puts prediction
 ```
 
@@ -43,8 +43,8 @@ data =  [[720, 60000, 1],
         [750, 70000, 1]]
 
 ml = MLRuby::DecisionTreeClassifier::Model.new(data)
-prediction1 = ml.predict([[180, 10000]]).to_i
-prediction2 = ml.predict([[5000, 50000]]).to_i
+prediction1 = ml.predict([[180, 10000]])
+prediction2 = ml.predict([[5000, 50000]])
 ```
  - ### K-Nearest Neighbors Algorithm - Example on Recommended/Similar products in E-Commerce based application
 
