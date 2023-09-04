@@ -23,7 +23,7 @@ Here are examples of how to install these python libraries via the command line 
 # Usage
  - ### Linear Regression Algorithm - Sales Order Prediction Example
  
-    Imagine you have training three days' worth of sales order data represented as input features [1, 2, 3] and the corresponding sales amounts [100, 400, 430] as target variables. Now, you want to predict your sales order for day 4.
+    Imagine you have three days' worth of sales order data represented as input features [1, 2, 3] and the corresponding sales amounts [100, 400, 430] as target variables. Now, you want to predict your sales order for day 4.
 ```
  ml = MLRuby::LinearRegression::Model.new([[1],[2],[3]], [[100], [400], [430]])
  prediction = ml.predict([[4]])
@@ -32,7 +32,7 @@ Here are examples of how to install these python libraries via the command line 
 
  - ### Decision Tree Algorithm - User Approval Status  Example
 
-   Suppose you have a training dataset that includes features such as social credit score, yearly income, and approval status (where 1 represents approval, and 0 represents non-approval). Now, you want to classify the approval status of a new person.
+   Suppose you have a dataset that includes features such as social credit score, yearly income, and approval status (where 1 represents approval, and 0 represents non-approval). Now, you want to classify the approval status of a new person.
 
 ```
 data =  [[720, 60000, 1],
