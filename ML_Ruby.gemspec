@@ -13,7 +13,7 @@ Gem::Specification.new do |spec|
   spec.homepage = "https://github.com/barek2k2/ML_Ruby"
   spec.required_ruby_version = ">= 2.6.0"
 
-  spec.metadata["allowed_push_host"] = "https://github.com/barek2k2"
+  spec.metadata["allowed_push_host"] = "https://rubygems.org/"
 
   spec.metadata["homepage_uri"] = "https://github.com/barek2k2/ML_Ruby"
   spec.metadata["source_code_uri"] = "https://github.com/barek2k2/ML_Ruby"

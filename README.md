@@ -20,6 +20,18 @@ Here are examples of how to install these python libraries via the command line 
 
     $ gem install ML_Ruby
 
+To include the "ML_Ruby" gem in your Ruby on Rails application, simply add the following line to your Gemfile:
+
+```
+gem 'ML_Ruby'
+```  
+  
+After adding the gem, run the bundle install command to install it:
+
+```
+bundle install
+```
+
 # Usage
  - ### Linear Regression Algorithm - Sales Order Prediction Example
  
