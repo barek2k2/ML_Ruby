@@ -23,7 +23,7 @@ Here are examples of how to install these python libraries via the command line 
 # Usage
  - ### Linear Regression Algorithm - Sales Order Prediction Example
  
-    Imagine you have three days' worth of sales order data represented as input features [1, 2, 3] and the corresponding sales amounts [100, 400, 430] as target variables. Now, you want to predict your sales order for day 4.
+    Imagine you have training three days' worth of sales order data represented as input features [1, 2, 3] and the corresponding sales amounts [100, 400, 430] as target variables. Now, you want to predict your sales order for day 4.
 ```
  ml = MLRuby::LinearRegression::Model.new([[1],[2],[3]], [[100], [400], [430]])
  prediction = ml.predict([[4]])
@@ -32,7 +32,7 @@ Here are examples of how to install these python libraries via the command line 
 
  - ### Decision Tree Algorithm - User Approval Status  Example
 
-   Suppose you have a dataset that includes features such as social credit score, yearly income, and approval status (where 1 represents approval, and 0 represents non-approval). Now, you want to classify the approval status of a new person.
+   Suppose you have a training dataset that includes features such as social credit score, yearly income, and approval status (where 1 represents approval, and 0 represents non-approval). Now, you want to classify the approval status of a new person.
 
 ```
 data =  [[720, 60000, 1],
@@ -48,7 +48,7 @@ prediction2 = ml.predict([[5000, 50000]])
 ```
  - ### K-Nearest Neighbors Algorithm - Example on Recommended/Similar products in E-Commerce based application
 
-   Imagine you have a dataset representing various products in an e-commerce platform, each characterized by specific features. Now, you want to find similar products to a given product (let's say, product ID 4) based on these features.
+   Imagine you have a training dataset representing various products in an e-commerce platform, each characterized by specific features. Now, you want to find similar products to a given product (let's say, product ID 4) based on these features.
 
 ```
     products = [
@@ -110,7 +110,7 @@ similar_products = ml.similar_with(4)
 
     In a messaging system, it's essential to identify and filter out spam text messages to ensure a smooth and secure user experience. With the capabilities of this gem, you can effectively detect spam text and take appropriate actions.
 ```
-messages = [
+training_messages = [
       ["Hey, congratulations! You have won a free iPhone.", "spam"],
       ["Meeting canceled, see you later.", "not_spam"],
       ["Buy one get one free. Limited time offer!", "spam"],
@@ -120,7 +120,7 @@ messages = [
       ["Please reschedule the meeting on the next following day", "not_spam"],
     ]
 
-  ml = MLRuby::NaturalLanguageProcessing::TextClassifier::Model.new(messages)
+  ml = MLRuby::NaturalLanguageProcessing::TextClassifier::Model.new(training_messages)
   new_messages = [
       "Welcome!, you have won 2.5 million dollars",
       "Hello, can we schedule a meeting?",
