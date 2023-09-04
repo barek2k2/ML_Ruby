@@ -8,8 +8,8 @@ Gem::Specification.new do |spec|
   spec.authors = ["Abdul Barek"]
   spec.email = ["barek2k2@gmail.com"]
 
-  spec.summary = "Machine learning based gem for ruby application powered by Python"
-  spec.description = "Machine learning gem for ruby application powered by Python"
+  spec.summary = "Ruby gem uses Machine Learning(ML) techniques to make predictions and classifications, and it's powered by Python3 under the hood."
+  spec.description = "This Ruby gem leverages Machine Learning(ML) techniques to make predictions(forecasts) and classifications in various applications. It provides capabilities such as predicting next month's billing, forecasting upcoming sales orders, determining user approval status, classifying text, generating similarity scores, and making recommendations. It uses Python3 under the hood, powered by popular machine learning techniques including NLP(Natural Language Processing), Decision Tree, K-Nearest Neighbors and Linear Regression algorithms."
   spec.homepage = "https://github.com/barek2k2/ML_Ruby"
   spec.required_ruby_version = ">= 2.6.0"
 
