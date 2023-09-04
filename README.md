@@ -106,7 +106,7 @@ ml = MLRuby::KNearestNeighbors::Model.new(products, feature_names, 2)
 similar_products = ml.similar_with(4)
 ```
 
- - ### NLP: Naive Bayes Algorithm - Spam Detection in a Messaging System
+ - ### Natural Language Processing(NLP): Naive Bayes Algorithm - Spam Detection in a Messaging System
 
     In a messaging system, it's essential to identify and filter out spam text messages to ensure a smooth and secure user experience. With the capabilities of this gem, you can effectively detect spam text and take appropriate actions.
 ```
