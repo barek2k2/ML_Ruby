@@ -56,9 +56,7 @@ housing_prices = [
   ]
 ```    
 
-And their corresponding prices `[300000, 250000, 400000, 350000, 500000]`
-
-Now you would like to predict any new apartment's price    
+And their corresponding prices `[300000, 250000, 400000, 350000, 500000]`, now if you would like to predict any new apartment's price, you can do so as below:    
 ```
 ml = MLRuby::RandomForestRegression::Model.new(
       [[3, 1500, 0],
