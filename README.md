@@ -47,7 +47,7 @@ bundle install
     Consider yourself in the dynamic field of the Real Estate market, you have some apartments/houses data(number of bed rooms, price, approval_status) represented as input features 
     
 ```
-housing_prices = [
+apartment_features = [
     [3, 1500, 0],
     [2, 1200, 1],
     [4, 1800, 0],
@@ -56,18 +56,9 @@ housing_prices = [
   ]
 ```    
 
-And their corresponding prices `[300000, 250000, 400000, 350000, 500000]`, now if you would like to predict any new apartment's price, you can do so as below:    
+And their corresponding prices `prices = [300000, 250000, 400000, 350000, 500000]`, now if you would like to predict any new apartment's price, you can do so as below:    
 ```
-ml = MLRuby::RandomForestRegression::Model.new(
-      [[3, 1500, 0],
-       [2, 1200, 1],
-       [4, 1800, 0],
-       [3, 1600, 1],
-       [5, 2200, 1]
-      ],
-      [300000, 250000, 400000, 350000, 500000]
-    )
-
+ml = MLRuby::RandomForestRegression::Model.new(apartment_features,prices)
 prediction = ml.predict([[4, 5068, 0], [3, 1760, 1]])
 puts prediction
 ```
