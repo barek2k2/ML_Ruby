@@ -42,6 +42,38 @@ bundle install
  puts prediction
 ```
 
+ - ### Random Forest Regression Algorithm - Real Estate House Pricing Example
+ 
+    Consider yourself in the dynamic field of the Real Estate market, you have some apartments/houses data(number of bed rooms, price, approval_status) represented as input features 
+    
+```
+housing_prices = [
+    [3, 1500, 0],
+    [2, 1200, 1],
+    [4, 1800, 0],
+    [3, 1600, 1],
+    [5, 2200, 1]
+  ]
+```    
+
+And their corresponding prices `[300000, 250000, 400000, 350000, 500000]`
+
+Now you would like to predict any new apartment's price    
+```
+ml = MLRuby::RandomForestRegression::Model.new(
+      [[3, 1500, 0],
+       [2, 1200, 1],
+       [4, 1800, 0],
+       [3, 1600, 1],
+       [5, 2200, 1]
+      ],
+      [300000, 250000, 400000, 350000, 500000]
+    )
+
+prediction = ml.predict([[4, 5068, 0], [3, 1760, 1]])
+puts prediction
+```
+
  - ### Decision Tree Algorithm - User Approval Status  Example
 
    Suppose you have a dataset that includes features such as social credit score, yearly income, and approval status (where 1 represents approval, and 0 represents non-approval). Now, you want to classify the approval status of a new person.

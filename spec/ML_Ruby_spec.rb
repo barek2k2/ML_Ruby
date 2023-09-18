@@ -12,7 +12,7 @@ RSpec.describe MLRuby do
     expect(prediction).to be > 0
   end
 
-  it "should generate ML based prediction using random forest regression!", focus: true do
+  it "should generate ML based prediction using random forest regression in the field of Real Estate Market(for example)." do
     ml = MLRuby::RandomForestRegression::Model.new(
       [[3, 1500, 0],
        [2, 1200, 1],
