@@ -12,6 +12,22 @@ RSpec.describe MLRuby do
     expect(prediction).to be > 0
   end
 
+  it "should generate ML based prediction using random forest regression!", focus: true do
+    ml = MLRuby::RandomForestRegression::Model.new(
+      [[3, 1500, 0],
+       [2, 1200, 1],
+       [4, 1800, 0],
+       [3, 1600, 1],
+       [5, 2200, 1]
+      ],
+      [300000, 250000, 400000, 350000, 500000]
+    )
+    prediction = ml.predict([[4, 5068, 0], [3, 1760, 1]])
+    expect(prediction).not_to be nil
+    expect(prediction).to be_an_instance_of(Array)
+    expect(prediction.count).to eq(2)
+  end
+
   it "should generate a classifier based on some attributes which can classify or categorize new item" do
     data = [[720, 60000, 1],
             [650, 40000, 0],

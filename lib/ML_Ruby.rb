@@ -19,6 +19,20 @@ module MLRuby
     end
   end
 
+  module RandomForestRegression
+    class Model
+      def initialize(x, y)
+        @x = x
+        @y = y
+      end
+      def predict(next_x)
+        script_path = "#{Gem.loaded_specs['ML_Ruby'].gem_dir}/lib/python/random_forest.py"
+        result = `#{MLRuby::PYTHON_PATH} #{script_path} "#{@x}, #{@y}, #{next_x}"`
+        result.gsub(/\[|\]/, '').split(' ').map(&:strip).map(&:to_f)
+      end
+    end
+  end
+
   module DecisionTreeClassifier
     class Model
       def initialize(data)
