@@ -44,7 +44,7 @@ bundle install
 
  - ### Random Forest Regression Algorithm - Real Estate House Pricing Example
  
-    Consider yourself in the dynamic field of the Real Estate market, you have some apartments/houses data(number of bed rooms, price, approval_status) represented as input features 
+    Consider yourself in the dynamic field of the Real Estate market, you have some apartments/houses data(number of bed rooms, price, approval_status) represented as input features and their corresponding prices.
     
 ```
 apartment_features = [
@@ -54,12 +54,13 @@ apartment_features = [
     [3, 1600, 1],
     [5, 2200, 1]
   ]
+prices = [300000, 250000, 400000, 350000, 500000]
 ```    
-
-And their corresponding prices `prices = [300000, 250000, 400000, 350000, 500000]`, now if you would like to predict any new apartment's price, you can do so as below:    
+Now if you would like to predict any new apartment's price, you can do so as below:    
 ```
 ml = MLRuby::RandomForestRegression::Model.new(apartment_features,prices)
-prediction = ml.predict([[4, 5068, 0], [3, 1760, 1]])
+two_new_apartment_features = [[4, 5068, 0], [3, 1760, 1]]
+prediction = ml.predict(two_new_apartment_features)
 puts prediction
 ```
 
