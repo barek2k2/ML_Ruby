@@ -117,4 +117,29 @@ RSpec.describe MLRuby do
     expect(predictions[3][1]).to eq('spam')
   end
 
+  it "should categorize texts into some predefined categories" do
+    documents = [
+      "Machine learning techniques include neural networks and decision trees.",
+      "Web development skills are essential for building modern websites.",
+      "Natural language processing (NLP) is a subfield of artificial intelligence.",
+      "Data science involves data analysis and statistical modeling.",
+      "Computer vision is used in image and video processing applications."
+    ]
+
+    categories = ["Machine Learning", "Web Development", "Artificial Intelligence", "Data Science", "Computer Vision"]
+    ml = MLRuby::NaturalLanguageProcessing::SupportVectorMachine::Model.new(documents, categories)
+    new_documents = [
+      "I am Ruby On Rails Expert",
+      "I am interested in understanding natural language processing.",
+      "I want to pursue an academic degree on neural networks.",
+      "I have more than 12 years of professional working experience in JavaScript stack"
+    ]
+    predictions = ml.predict(new_documents)
+    expect(predictions).to be_a(Array)
+    expect(predictions[0]).to eq("Web Development")
+    expect(predictions[1]).to eq("Artificial Intelligence")
+    expect(predictions[2]).to eq("Machine Learning")
+    expect(predictions[3]).to eq("Web Development")
+  end
+
 end

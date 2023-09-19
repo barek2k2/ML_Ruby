@@ -163,6 +163,29 @@ training_messages = [
     ]
   predictions = ml.predict(new_messages)
 ```
+
+ - ### Natural Language Processing(NLP): Support Vector Machine Algorithm - Categorize/Classify Comments/Texts/Documents/Articles
+
+    Suppose in a customer commenting system, you would like to categorize customer's feedback. With the capabilities of this gem, you can effectively classify some comments/texts/documents/articles into respective categories.
+```
+    training_documents = [
+      "Machine learning techniques include neural networks and decision trees.",
+      "Web development skills are essential for building modern websites.",
+      "Natural language processing (NLP) is a subfield of artificial intelligence.",
+      "Data science involves data analysis and statistical modeling.",
+      "Computer vision is used in image and video processing applications."
+    ]
+    categories = ["Machine Learning", "Web Development", "Artificial Intelligence", "Data Science", "Computer Vision"]
+    ml = MLRuby::NaturalLanguageProcessing::SupportVectorMachine::Model.new(training_documents, categories)
+    new_documents = [
+      "I am Ruby On Rails Expert",
+      "I am interested in understanding natural language processing.",
+      "I want to pursue an academic degree on neural networks.",
+      "I have more than 12 years of professional working experience in JavaScript stack"
+    ]
+    predictions = ml.predict(new_documents)  
+```
+
 It's important to note that the size of your training dataset plays a significant role in enhancing the accuracy of the model's predictions. By incorporating real-world, authentic data and expanding the amount of training data for the model, it gains a better understanding of patterns and trends within the data which leads to more precise and reliable predictions.
 ## Contributing
 

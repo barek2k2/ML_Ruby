@@ -74,6 +74,19 @@ module MLRuby
         end
       end
     end
+    module SupportVectorMachine
+      class Model
+        def initialize(training_data=[], categories=[])
+          @training_data = training_data
+          @categories = categories
+        end
+        def predict(new_data=[])
+          script_path = "#{Gem.loaded_specs['ML_Ruby'].gem_dir}/lib/python/natural_language_processing/support_vector_machine.py"
+          result = `#{MLRuby::PYTHON_PATH} #{script_path} '#{@training_data}' '#{@categories}' '#{new_data}'`
+          result.gsub("\n", "").gsub(/[\[\]]/, '').split("' '").map { |element| element.gsub(/'/, '') }
+        end
+      end
+    end
   end
 
 end
