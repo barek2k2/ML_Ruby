@@ -1,14 +1,14 @@
 # MLRuby
 
-This Ruby gem leverages Machine Learning(ML) techniques to make predictions(forecasts) and classifications in various applications. It provides capabilities such as predicting next month's billing, forecasting upcoming sales orders, determining user approval status, classifying text, generating similarity scores, and making recommendations. It uses Python3 under the hood, powered by popular machine learning techniques including NLP(Natural Language Processing), Decision Tree, K-Nearest Neighbors and Linear Regression algorithms.
+This Ruby gem leverages Machine Learning(ML) techniques to make predictions(forecasts) and classifications in various applications. It provides capabilities such as predicting next month's billing, generating new house/apartment prices, forecasting upcoming sales orders, determining user approval status, classifying text, generating similarity scores, and making recommendations. It uses Python3 under the hood, powered by popular machine learning techniques including NLP(Natural Language Processing), Decision Tree, K-Nearest Neighbors, Random Forest and Linear Regression algorithms.
 
 
 # Pre-requisite
-1. Please make sure you have Python3 installed in your Machine. The gem will run `which python3` to locate your installed python3 in your Machine. Usually it is installed at `/usr/bin/python3`
+1. Please make sure you have Python3 installed in your Machine. The gem will run `which python3` command internally in order to locate your installed python3 in your Machine. Usually it is installed at `/usr/bin/python3`
 
-2. Please make sure you have `scikit-learn` and `pandas` python libraries are installed in Machine.
+2. Please make sure you have `scikit-learn` and `pandas` python libraries are installed in your Machine.
 
-Here are examples of how to install these python libraries via the command line in MacOS. Install `nltk` if you really need to work with Natural Language Processing(NLP)
+Here are examples of how to install these python libraries via the command line in MacOS and Linux. Install `nltk` if you really need to work with Natural Language Processing(NLP)
 
 `/usr/bin/python3 -m pip install scikit-learn`
 
