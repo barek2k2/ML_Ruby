@@ -166,7 +166,7 @@ training_messages = [
 
  - ### Natural Language Processing(NLP): Support Vector Machine Algorithm - Categorize/Classify Comments/Texts/Documents/Articles
 
-    Suppose in a customer commenting system, you would like to categorize customer's feedback. With the capabilities of this gem, you can effectively classify some comments/texts/documents/articles into respective categories.
+    Imagine you're managing a customer feedback system, and you want to categorize customer comments effectively. With the capabilities of this gem, you can seamlessly classify comments/texts/documents/articles into their appropriate categories.
 ```
     training_documents = [
       "Machine learning techniques include neural networks and decision trees.",
