@@ -19,6 +19,20 @@ module MLRuby
     end
   end
 
+  module LogisticRegression
+    class Model
+      def initialize(x, y)
+        @x = x
+        @y = y
+      end
+      def predict(nexts)
+        script_path = "#{Gem.loaded_specs['ML_Ruby'].gem_dir}/lib/python/logistic_regression.py"
+        result = `#{MLRuby::PYTHON_PATH} #{script_path} "#{@x}, #{@y}, #{nexts}"`
+        result.gsub("\n","").gsub("[","").gsub("]","").split(" ").map(&:to_i)
+      end
+    end
+  end
+
   module RandomForestRegression
     class Model
       def initialize(x, y)

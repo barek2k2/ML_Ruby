@@ -1,6 +1,6 @@
 # MLRuby
 
-This Ruby gem leverages Machine Learning(ML) techniques to make predictions(forecasts) and classifications in various applications. It provides capabilities such as predicting next month's billing, generating new house/apartment prices, forecasting upcoming sales orders, determining user approval status, classifying text, generating similarity scores, and making recommendations. It uses Python3 under the hood, powered by popular machine learning techniques including NLP(Natural Language Processing), Decision Tree, K-Nearest Neighbors, Random Forest and Linear Regression algorithms.
+This Ruby gem leverages Machine Learning(ML) techniques to make predictions(forecasts) and classifications in various applications. It provides capabilities such as predicting next month's billing, forecasting upcoming sales orders, identifying patient's potential findings(like Diabetes), determining user approval status, classifying text, generating similarity scores, and making recommendations. It uses Python3 under the hood, powered by popular machine learning techniques including NLP(Natural Language Processing), Decision Tree, K-Nearest Neighbors and Logistic Regression, Random Forest and Linear Regression algorithms.
 
 
 # Pre-requisite
@@ -40,6 +40,24 @@ bundle install
  ml = MLRuby::LinearRegression::Model.new([[1],[2],[3]], [[100], [400], [430]])
  prediction = ml.predict([[4]])
  puts prediction
+```
+
+ - ### Logistic Regression Algorithm - Diabetes detection Example in Health Industry
+ 
+    Imagine you possess some patients data encompassing vital attributes such as Blood Pressure, Glucose Level, and Age, meticulously arranged as input features, accompanied by corresponding predictions for diabetes as target variables. Now you can effortlessly predict the likelihood of diabetes for any new patient.
+```
+ ml = MLRuby::LogisticRegression::Model.new(
+   [
+     [120, 80, 32],
+     [140, 90, 28],
+     [160, 75, 35],
+     [135, 88, 30],
+     [145, 92, 38]
+   ],
+   [1, 0, 1, 0, 1]
+ )
+ predictions = ml.predict([[130, 85, 30], [80, 80, 90]])
+ puts predictions
 ```
 
  - ### Random Forest Regression Algorithm - Real Estate House Pricing Example

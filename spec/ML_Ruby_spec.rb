@@ -12,6 +12,23 @@ RSpec.describe MLRuby do
     expect(prediction).to be > 0
   end
 
+  it "should generate ML based predictions for logistic regression model" do
+    ml = MLRuby::LogisticRegression::Model.new(
+      [
+        [120, 80, 32],
+        [140, 90, 28],
+        [160, 75, 35],
+        [135, 88, 30],
+        [145, 92, 38]
+      ],
+      [1, 0, 1, 0, 1]
+    )
+    predictions = ml.predict([[130, 85, 30], [80, 80, 90]])
+    expect(predictions).to be_a(Array)
+    expect(predictions[0]).to eq(0)
+    expect(predictions[1]).to eq(1)
+  end
+
   it "should generate ML based prediction using random forest regression in the field of Real Estate Market(for example)." do
     ml = MLRuby::RandomForestRegression::Model.new(
       [[3, 1500, 0],
