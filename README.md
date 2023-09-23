@@ -1,6 +1,6 @@
 # MLRuby
 
-This Ruby gem leverages Machine Learning(ML) techniques to make predictions(forecasts) and classifications in various applications. It provides capabilities such as predicting next month's billing, forecasting upcoming sales orders, identifying patient's potential findings(like Diabetes), determining user approval status, classifying text, generating similarity scores, and making recommendations. It uses Python3 under the hood, powered by popular machine learning techniques including NLP(Natural Language Processing), Decision Tree, K-Nearest Neighbors and Logistic Regression, Random Forest and Linear Regression algorithms.
+This Ruby gem leverages Machine Learning(ML) techniques to make predictions(forecasts) and classifications in various applications. It provides capabilities such as predicting next month's billing, forecasting upcoming sales orders, identifying patient's potential findings(like Diabetes), determining user approval status, classifying text, generating similarity scores, and making recommendations. It uses Python3 under the hood, powered by popular machine learning techniques including NLP(Natural Language Processing), Decision Tree, K-Nearest Neighbors, Logistic Regression, Random Forest and Linear Regression algorithms.
 
 
 # Pre-requisite
